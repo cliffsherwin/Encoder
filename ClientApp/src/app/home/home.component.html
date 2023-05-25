@@ -1,0 +1,22 @@
+<form>
+  <p>Please enter a text:</p>
+  <div class="form-group">
+    <input type="textbox" placeholder="Enter a text here" class="form-control" id="input"
+    [disabled]="processingFlag" [(ngModel)]="text" name="Name">
+  </div>
+  <br>
+  <div class="form-group">
+    <button type="button" class="btn btn-outline-info col-sm-2 me-2" (click)="convertMyText()" [disabled]="processingFlag">Convert</button>
+    <!-- <button type="button" class="btn btn-outline-info col-sm-2 me-2" (click)="addText()" [disabled]="processingFlag">Convert</button> -->
+    <button type="button" class="btn btn-outline-danger col-sm-2 me-2" [disabled]="!processingFlag" (click)="cancel()">Cancel</button>
+  </div>
+  <br>
+  <br>
+
+  <p>Equivalent Base64:</p>
+
+  <div class="form-group">
+    <textarea name="result" class="form-control" rows="3"
+    value="{{converter.cs}}" disabled></textarea>
+  </div>
+</form>
