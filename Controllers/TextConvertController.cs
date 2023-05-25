@@ -26,45 +26,16 @@ namespace Encoder.Controllers
         {
             byte[] bytes = System.Text.Encoding.UTF8.GetBytes(text);
             string base64String = Convert.ToBase64String(bytes);
-            string bar = string.Empty;
 
             EncodedText encode = new()
             {
                 Final = base64String
             };
-            //EncodeTextOne enc = new EncodeTextOne();
-            //foreach (char c in base64String)
-            //{
-            //    bar += c;
-            //    enc.Text = c;
-            //    // bar += c;
-            //     //return enc;
-
-            //}
-            //return enc;
 
             return base64String == null ? NotFound() : encode;
 
         }
-        public class EncodeTextOne
-        {
-            public EncodeTextOne()
-            {
-                this.Text = ' ';
 
-            }
-            public char Text { get; set; }
-
-        }
-
-        //public class TextChuchu
-        //{
-        //    public TextChuchu()
-        //    {
-        //        this.PlainText = "";
-        //    }
-        //    public string PlainText { get; set; }
-        //}
         public class EncodedText
         {
             public EncodedText()
